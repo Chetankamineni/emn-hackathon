@@ -1,13 +1,9 @@
 import React from 'react';
-import './style.css'; // Import the CSS file
-
+import './style.css';
 const LoginForm = () => {
   const handleSubmit = (e) => {
-    // Prevent default form submission if you plan to use an actual submit type
-    // In your original code, the button was type="button", but a form often needs submission logic.
-    // e.preventDefault(); 
     console.log("Login submitted!");
-    // Add actual login logic here
+    
   };
 
   return (
