@@ -1,0 +1,2 @@
+ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZtdWVsb21jZGhjZWh1d2l2Znd4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4NzQyOTksImV4cCI6MjA3NDQ1MDI5OX0.tox0leie8nwVDkksvHnAbmH3vCOqilWJACK0Zv--JPg"
+SUPABASE_URL = "https://fmuelomcdhcehuwivfwx.supabase.co"
