@@ -1,0 +1,72 @@
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  height: 100vh;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  border-right: 1px solid #e0e0e0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-heading {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  padding: 0 15px;
+  margin: 25px 0 10px 0;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.nav-item a:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-item.active a {
+  color: #d95f20;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Orange indicator bar for active item */
+.nav-item.active a::before {
+  content: '';
+  position: absolute;
+  left: -10px; /* Adjust to align with the edge of the sidebar */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background-color: #f36f2e;
+  border-radius: 0 4px 4px 0;
+}
+
+
+.nav-item .icon {
+  margin-right: 15px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
