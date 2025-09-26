@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Tracker (Single File)</title>
     <style>
-        /* CSS STYLING */
+       
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f7f9;
@@ -29,13 +29,13 @@
             margin-bottom: 20px;
         }
 
-        /* Controls (Search and Filters) */
+       
         .controls {
             display: flex;
             gap: 15px;
             margin-bottom: 25px;
             align-items: center;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            flex-wrap: wrap; 
         }
 
         #ticketSearch, .controls select {
@@ -43,14 +43,14 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             flex-grow: 1;
-            min-width: 150px; /* Ensure filters are readable */
+            min-width: 150px;
         }
 
         #ticketSearch {
             flex-grow: 2;
         }
 
-        /* Ticket Card Styling */
+      
         .ticket-card {
             background: #ffffff;
             border: 1px solid #ddd;
@@ -78,7 +78,7 @@
             color: #333;
         }
 
-        /* Priority and Status Tags */
+
         .ticket-tag {
             padding: 5px 10px;
             border-radius: 15px;
@@ -90,12 +90,12 @@
             display: inline-block;
         }
 
-        /* Status Colors */
+        
         .status-Open { background-color: #d1ecf1; color: #007bff; }
         .status-In { background-color: #fff3cd; color: #856404; } /* In Progress */
         .status-Closed { background-color: #d4edda; color: #155724; }
 
-        /* Priority Colors */
+     
         .priority-High { background-color: #f8d7da; color: #721c24; }
         .priority-Medium { background-color: #ffe0b2; color: #ff9800; }
         .priority-Low { background-color: #e0f7fa; color: #00bcd4; }
@@ -130,7 +130,7 @@
     </div>
 
     <script>
-        // JAVASCRIPT LOGIC
+        
 
         // Dummy data representing the list of tickets
         const tickets = [
@@ -145,12 +145,9 @@
 
         const ticketListContainer = document.getElementById('ticketList');
 
-        /**
-         * Renders the list of tickets to the DOM.
-         * @param {Array} currentTickets - The array of tickets to display.
-         */
+        
         function renderTickets(currentTickets) {
-            ticketListContainer.innerHTML = ''; // Clear existing list
+            ticketListContainer.innerHTML = ''; 
 
             if (currentTickets.length === 0) {
                 ticketListContainer.innerHTML = '<p style="text-align: center; color: #888; padding: 20px;">No tickets match the current filters. 😔</p>';
@@ -161,7 +158,6 @@
                 const card = document.createElement('div');
                 card.className = 'ticket-card';
                 
-                // Creates class names for styling (e.g., status-Open). Uses the first word for status class.
                 const statusClass = `status-${ticket.status.split(' ')[0]}`;
                 const priorityClass = `priority-${ticket.priority}`;
 
@@ -174,29 +170,25 @@
                         </div>
                     </div>
                 `;
-                // Note: The priority tag is placed inside the info block for better flow on this simple layout.
+
 
                 ticketListContainer.appendChild(card);
             });
         }
 
-        /**
-         * Filters the main ticket array based on search text, status, and priority.
-         * This function is called by the onkeyup/onchange events in the HTML.
-         */
         function filterTickets() {
             const searchTerm = document.getElementById('ticketSearch').value.toLowerCase();
             const status = document.getElementById('statusFilter').value;
             const priority = document.getElementById('priorityFilter').value;
 
             const filteredTickets = tickets.filter(ticket => {
-                // 1. Search Filter: Check if the ticket title includes the search term
+
                 const titleMatch = ticket.title.toLowerCase().includes(searchTerm);
 
-                // 2. Status Filter: Match if filter is "All" (empty string) or if status matches
+
                 const statusMatch = status === "" || ticket.status === status;
 
-                // 3. Priority Filter: Match if filter is "All" (empty string) or if priority matches
+
                 const priorityMatch = priority === "" || ticket.priority === priority;
 
                 return titleMatch && statusMatch && priorityMatch;
@@ -205,7 +197,7 @@
             renderTickets(filteredTickets);
         }
 
-        // Initial render when the page loads
+
         document.addEventListener('DOMContentLoaded', () => {
             renderTickets(tickets);
         });
